@@ -430,6 +430,12 @@ hr {
   flex-direction: row;
   gap: 20px;
 }
+
+.gitHub-repo__li {
+  list-style: none;
+  color: #2a3542;
+  font-family: "Lexend Exa", "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+}
 /*-------------------*\
   #FOOTER   
 \*-------------------*/
@@ -457,6 +463,10 @@ hr {
     grid-auto-rows: auto; */
     display: flex;
     flex-direction: column;
+  }
+
+  .header {
+    height: 20vw;
   }
 
   /* FIGURE IN MOBILE */
@@ -608,6 +618,10 @@ hr {
     display: grid;
     /* z-index: 3; */
     background-color: rgba(0, 0, 0, 0);
+  }
+
+  .navbar {
+    border-bottom: none;
   }
 
   .navbar-menu__button {

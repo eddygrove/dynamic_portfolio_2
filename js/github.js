@@ -15,17 +15,12 @@ function loadRepos() {
       loadingStatus.innerText = " ";
       console.log("loggar repoData: ", repoData);
       for (const item of repoData) {
-        createRepoList(repoList, item.name, item.url, item.description);
+        console.log("loggar item: ", item);
+        if (Object.values(item).includes("split_the_bill")) {
+          console.log("item found!");
+          createRepoList(repoList, item.name, item.url, item.description);
+        }
       }
-
-      // const jsonKeys = Object.keys(json);
-      // console.log("loggar jsonKeys: ", jsonKeys);
-      // jsonKeys.forEach((jsonKey) => {
-      //   console.log("loggar each jsonKey: ", jsonKey);
-
-      //   const jsonItems = json[jsonKey];
-      //   console.log("jsonItems: ", jsonItems);
-      // });
     } else {
       console.log("HTTP-Error: " + response.status);
     }
@@ -34,7 +29,7 @@ function loadRepos() {
   function createRepoList(repoList, name, url, description) {
     const li = document.createElement("li");
     li.innerText = name + "\n " + url + "\n " + description;
-    li.classList.add("gitHubStyle");
+    li.classList.add("gitHub-repo__li");
     repoList.appendChild(li);
   }
 
