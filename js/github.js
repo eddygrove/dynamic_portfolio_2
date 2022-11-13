@@ -36,4 +36,10 @@ function loadRepos() {
   getRepoData();
 }
 
-loadRepos();
+// function test() {
+//   alert("The function 'test' is executed");
+// }
+let btn = document.getElementById("btn");
+btn.addEventListener("click", (event) => {
+  loadRepos();
+});
