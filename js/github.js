@@ -1,8 +1,9 @@
 function loadRepos() {
   element = document.getElementById("gitRepos");
-  element.classList.toggle("hide");
+  element.classList.toggle("undisplay-element");
 
   const loadingStatus = document.querySelector("#gitRepos");
+  const loadingIcon = document.querySelector(".lds-ellipsis");
 
   const gitRepoUrl = "https://api.github.com/users/eddygrove/repos";
 
@@ -13,6 +14,7 @@ function loadRepos() {
     if (response.ok) {
       let repoData = await response.json();
       loadingStatus.innerText = " ";
+      // loadingIcon.classList.toggle("undisplay-element");
       console.log("loggar repoData: ", repoData);
       for (const item of repoData) {
         console.log("loggar item: ", item);
@@ -36,10 +38,9 @@ function loadRepos() {
   getRepoData();
 }
 
-// function test() {
-//   alert("The function 'test' is executed");
-// }
 let btn = document.getElementById("btn");
 btn.addEventListener("click", (event) => {
+  let clickedButton = document.querySelector(".portfolio-list__button");
+  clickedButton.classList.toggle("portfolio-list__button_clicked");
   loadRepos();
 });

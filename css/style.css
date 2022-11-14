@@ -58,15 +58,14 @@ hr {
   display: inline-block;
   position: relative;
   width: 80px;
-  height: 80px;
+  height: 8px;
 }
 .lds-ellipsis div {
   position: absolute;
-  top: 73px;
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #000000;
+  background: #4a4f54;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
@@ -363,6 +362,23 @@ hr {
   /* padding: 2em; */
 }
 
+/* Add quotation character before quote */
+blockquote:before {
+  font: 14px/20px italic Times, serif;
+  content: "“";
+  font-size: 6em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+  font-size: 1.2em;
+}
+
+.referee {
+  text-align: right;
+}
+
 /****** CV ******/
 .cv-main-section__h4 {
   font-weight: 300;
@@ -436,6 +452,46 @@ hr {
   color: #2a3542;
   font-family: "Lexend Exa", "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.portfolio-list__button {
+  background-color: #0000; /* Green */
+  border: none;
+  color: #2a3542;
+  padding: 16px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /* margin: 4px 2px; */
+  /* transition-duration: 0.4s; */
+  cursor: pointer;
+  font-family: "Lexend Exa", "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.portfolio-list__button:after {
+  content: ">";
+  color: #2a3542;
+  font-weight: 200;
+  font-size: 2.3em;
+  line-height: 0.1em;
+  vertical-align: -0.1em;
+  /* border: 2px solid #4caf50; */
+}
+
+.portfolio-list__button:hover,
+.portfolio-list__button:hover:after {
+  color: #f32525;
+}
+
+.portfolio-list__button_clicked:after,
+.portfolio-list__button_clicked:hover:after {
+  content: ":";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  vertical-align: 0px;
+}
+
 /*-------------------*\
   #FOOTER   
 \*-------------------*/
@@ -663,4 +719,12 @@ hr {
   .menu__link_current {
     text-underline-offset: 0.2em;
   }
+}
+
+/*-------------------*\
+  #THE HIDING OF ELEMENTS
+\*-------------------*/
+
+.undisplay-element {
+  display: none;
 }

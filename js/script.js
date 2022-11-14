@@ -1,6 +1,7 @@
 const cvUrl = "cv.json";
 const myList = document.querySelector(".myList");
 const loadingStatus = document.querySelector(".status");
+const loadingIcon = document.querySelector(".lds-ellipsis");
 const translation = {
   employment: "Mina anställningar",
   education: "Mina utbildningar",
@@ -20,9 +21,6 @@ async function getCVData() {
     console.log("loggar cvKeys: ", cvKeys);
     cvKeys.forEach((cvKey) => {
       let myHeading = document.createElement("div");
-      // myHeading.classList.add("main__h4");
-      // myHeading.classList.add("cv-main-section__h4");
-      // myHeading.innerHTML = cvKey;
       myHeading.innerHTML = `<h4 class="main__h4 cv-main-section__h4">${cvKey}</h4> <hr class="main-section__hr">`;
 
       // om ngn översättning behövs:
@@ -108,8 +106,6 @@ async function getCVData() {
 
       console.log("===========");
     });
-
-    // myList.innerHTML = ``;
   } else {
     console.log("HTTP-Error: " + response.status);
     // OBS här nedan ett <li> men allt ovan är divs?

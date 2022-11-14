@@ -22,8 +22,8 @@
             <input
               class="navbar-menu__button"
               type="checkbox"
-              role="”button”"
-              tabindex="”0”"
+              role="button"
+              tabindex="0"
               aria-expanded="false"
               aria-controls="menu"
               aria-label="Open the menu"
@@ -221,17 +221,19 @@
                 </figure>
 
                 <div>
-                  <button id="btn">Coding experiments</button>
-                  <div id="gitRepos">
-                    <h3 class="status">
-                      Please wait, loading repository data
-                      <div class="lds-ellipsis">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                      </div>
-                    </h3>
+                  <button class="portfolio-list__button" id="btn">
+                    Repositories on Github
+                  </button>
+                  <div id="gitRepos" class="undisplay-element">
+                    <span class="status"
+                      >Please wait, loading repository data</span
+                    >
+                    <div class="lds-ellipsis">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
                   </div>
                 </div>
               </article>
